@@ -1,0 +1,41 @@
+{
+  "canisters": {
+    "voting": {
+      "main": "src/voting/main.mo",
+      "type": "motoko"
+    },
+    
+    "poll": {
+      "main": "src/POLL/poll.mo",
+      "type": "motoko"
+    },
+
+    "voting_assets": {
+      "dependencies": [
+        "voting"
+      ],
+      "frontend": {
+        "entrypoint": "src/voting_assets/src/index.html"
+      },
+      "source": [
+        "src/voting_assets/assets",
+        "dist/voting_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.9.3",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}

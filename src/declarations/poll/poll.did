@@ -1,0 +1,8 @@
+type POLL = 
+ service {
+   getApplicants: () -> (vec text) query;
+   getCanisterId: () -> (principal) query;
+   getCategory: () -> (text) query;
+   getVotes: () -> (vec principal) query;
+ };
+service : (text, vec text, vec principal) -> POLL
